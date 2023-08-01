@@ -3,7 +3,19 @@ function solve(mixedUpBoard, solvedBoard) {
   const numRows = mixedUpBoard.length();
   const numCol = mixedUpBoard[0].length();
   let moves = [];
-  
+
+  const findElementIndex = (board, element)=> {
+    for( let i = 0; i < numRows; i++){
+        for( let j = 0; j < numCol; j++ ){
+            if( board[i][j] == element){
+                return{ row: i, col: j};
+            }
+        }
+    }
+    return null;
+  }  
+
+
   for( let i = 0; i < numRows; i++){
     for( let j = 0; j < numCol; j++ ){
       const targetElement = solvedBoard[i][j];
